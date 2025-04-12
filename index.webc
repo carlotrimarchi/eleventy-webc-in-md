@@ -1,0 +1,21 @@
+---
+layout: layout.webc
+someData: "Eleventy front matter data"
+pagination:
+    data: collections.posts
+    size: 8
+    alias: posts
+---
+<div style="border: 3px solid teal; padding: 10px;">
+
+<p>Component first-demo inside of demo-embed, loaded inside of index.webc: it seems correct, but the generated html has the div with class .border repeated twice</p>
+
+<demo-embed><first-demo></first-demo></demo-embed>
+
+</div>
+
+<h2>Posts</h2>
+<div class="grid" webc:for="post of collections.posts">
+	<h3 @raw="post.data.title"></h3>
+	<div @html="post.content"></div>
+</div>

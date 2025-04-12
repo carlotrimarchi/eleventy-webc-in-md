@@ -1,0 +1,7 @@
+<div>this is the first demo</div>
+
+<style webc:scoped>
+	:host div {
+		background-color: rgb(139, 139, 255);
+	}
+</style>

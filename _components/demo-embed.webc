@@ -1,0 +1,9 @@
+<div class="border">
+  <slot></slot>
+</div>
+
+<style>
+.border {
+  border: 1px solid black;
+}
+</style>

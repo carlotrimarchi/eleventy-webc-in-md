@@ -1,0 +1,25 @@
+<button>click</button>
+<output @html="2"></output>
+
+<script>
+window.customElements.define("my-counter", class extends HTMLElement{
+  connectedCallback() {
+console.log("bla");
+            let button = this.querySelector(":scope button");
+            let output = this.querySelector(":scope output");
+          console.log(output);
+            let value = Number(output.innerText);
+
+            button.addEventListener("click", () => {
+              output.innerText = ++value;
+            });
+  };
+});
+</script>
+
+
+<style>
+button {
+  background-color: tomato;
+}
+</style>
