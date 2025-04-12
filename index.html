@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script type="module">window.customElements.define("my-counter", class extends HTMLElement{
+  connectedCallback() {
+console.log("bla");
+            let button = this.querySelector(":scope button");
+            let output = this.querySelector(":scope output");
+          console.log(output);
+            let value = Number(output.innerText);
+
+            button.addEventListener("click", () => {
+              output.innerText = ++value;
+            });
+  };
+});</script>
+    
+    <style>.wcnokcvdh div{background-color:rgb(139,139,255)}
+.border {
+  border: 1px solid black;
+}
+button {
+  background-color: tomato;
+}
+/*__EleventyBundle:get:css:default:EleventyBundle__*/</style>
+
+  </head>
+  <body>
+    <div><div style="border: 3px solid teal; padding: 10px">
+
+<p>Component first-demo inside of demo-embed, loaded inside of index.webc: it seems correct, but the generated html has the div with class .border repeated twice</p>
+
+<demo-embed><div class="border">
+  <div class="border">
+  <first-demo class="wcnokcvdh"><div>this is the first demo</div>
+
+</first-demo>
+</div>
+
+
+
+</div>
+
+
+</demo-embed>
+
+</div>
+
+<h2>Posts</h2>
+<div class="grid">
+	<h3>First post</h3>
+	<div><div style="border: 3px solid teal; padding: 10px; margin: 30px 0">
+Demo embed in first-post.md: 
+<ul>
+<li>like above, there are elements added more than once</li>
+<li>I guess that since we are inside of a markdown file, these elements are wrapped in a p tag</li>
+<li>in the resulting html, the div with class demo-embed appears more than once</li>
+</ul>
+<p><demo-embed><div class="border">
+  
+</div>
+
+
+</demo-embed></p><div class="border">
+  
+</div>
+
+
+<p></p><div class="border">
+<my-counter><button>click</button>
+<output>2</output>
+
+
+
+
+
+</my-counter>
+</div>
+
+</div>
+<div style="border: 3px solid teal; padding: 10px; margin: 30px 0">
+<ul>
+<li>Another demo, using first-demo component instead of my-counter</li>
+<li>also here there are duplicated tags and extra p tags added</li>
+</ul>
+<p><demo-embed><div class="border">
+  
+</div>
+
+
+</demo-embed></p><div class="border">
+  
+</div>
+
+
+<p></p><div class="border">
+<first-demo class="wcnokcvdh"><div>this is the first demo</div>
+
+</first-demo> 
+</div>
+
+</div>
+<div style="border: 3px solid teal; padding: 10px; margin: 30px 0">
+<ul>
+<li>same example as before, but this time I'm formatting the components on multiple lines</li>
+<li>even if I'm using first-demo only once, it appears multiple times</li>
+</ul>
+<p><demo-embed><div class="border">
+  
+</div>
+
+
+</demo-embed></p><div class="border">
+  
+</div>
+
+
+<p></p><div class="border"><p></p>
+<p><first-demo class="wcnokcvdh"><div>this is the first demo</div>
+
+</first-demo></p><div>this is the first demo</div>
+
+<p></p><div>this is the first demo</div><p></p>
+
+</div>
+
+</div></div>
+</div>
+</div>
+  
+
+</body>
+</html>
